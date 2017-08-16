@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4965B7911F43463300BCEBC2 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7901F43463300BCEBC2 /* Module.swift */; };
 		4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */; };
+		4965B7951F44365700BCEBC2 /* ModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7941F44365700BCEBC2 /* ModuleManager.swift */; };
 		49A7C9CA1F41BD54006AB66E /* ARCDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A7C9C01F41BD54006AB66E /* ARCDM.framework */; };
 		49A7C9CF1F41BD54006AB66E /* ARCDMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7C9CE1F41BD54006AB66E /* ARCDMTests.swift */; };
 		49A7C9D11F41BD55006AB66E /* ARCDM.h in Headers */ = {isa = PBXBuildFile; fileRef = 49A7C9C31F41BD54006AB66E /* ARCDM.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		4965B7901F43463300BCEBC2 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDescriptor.swift; sourceTree = "<group>"; };
+		4965B7941F44365700BCEBC2 /* ModuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleManager.swift; sourceTree = "<group>"; };
 		49A7C9C01F41BD54006AB66E /* ARCDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ARCDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A7C9C31F41BD54006AB66E /* ARCDM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCDM.h; sourceTree = "<group>"; };
 		49A7C9C41F41BD54006AB66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				4965B7901F43463300BCEBC2 /* Module.swift */,
 				4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */,
+				4965B7941F44365700BCEBC2 /* ModuleManager.swift */,
 				49A7C9C31F41BD54006AB66E /* ARCDM.h */,
 				49A7C9C41F41BD54006AB66E /* Info.plist */,
 			);
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4965B7951F44365700BCEBC2 /* ModuleManager.swift in Sources */,
 				4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */,
 				4965B7911F43463300BCEBC2 /* Module.swift in Sources */,
 			);
@@ -349,6 +353,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ARCDM/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.redcross.ARCDM;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -370,6 +375,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ARCDM/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.redcross.ARCDM;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
