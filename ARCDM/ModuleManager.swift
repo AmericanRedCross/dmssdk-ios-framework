@@ -11,7 +11,7 @@ import Foundation
 /// A manager that loads the module data and provides utilities for loading data surrounding modules
 public class ModuleManager {
 
-    var modules: [Module]?
+    public var modules: [Module]?
     
     public init() {
         
