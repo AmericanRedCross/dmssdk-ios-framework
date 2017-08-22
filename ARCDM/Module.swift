@@ -18,7 +18,7 @@ public struct Module {
     public var hierarchy: Int = 0
     
     /// The title of the module
-    public var title: String?
+    public var moduleTitle: String?
     
     /// The raw markdown content of the module
     public var content: String?
@@ -40,7 +40,7 @@ public struct Module {
             hierarchy = _hierarchy
         }
         
-        title = dictionary["title"] as? String
+        moduleTitle = dictionary["title"] as? String
         content = dictionary["content"] as? String
         
         if let _steps = dictionary["directories"] as? [[AnyHashable: Any]] {
