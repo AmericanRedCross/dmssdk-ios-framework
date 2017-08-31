@@ -58,6 +58,9 @@ public struct BundleInformation {
     /// The language codes of the available languages
     public var availableLanguages: [String]?
     
+    /// A failable initialiser that takes a dictionary from the server and turns it into a readable object containing information about an available bundle
+    ///
+    /// - Parameter dictionary: A complete dictionary from the bundle information endpoint
     init?(with dictionary: [AnyHashable: Any]) {
         
         guard let dataDictionary = dictionary["data"] as? [AnyHashable: Any] else {
