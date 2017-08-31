@@ -24,7 +24,7 @@ public class ContentController {
     ///   - completion: A Result<BundleInformation> object that contains either the bundle information or an error where appropriate.
     public func getBundleInformation(for projectID: String, completion: @escaping (Result<BundleInformation>) -> Void) {
         
-        requestController.get("projects/1/publishes/latest?language=en") { (response, error) in
+        requestController.get("projects/\(projectID)/publishes/latest?language=en") { (response, error) in
             
             guard let bundleInformationDictionary = response?.dictionary else {
                 completion(Result(value: nil, error: BundleError.InvalidDataReturned))
@@ -33,10 +33,7 @@ public class ContentController {
             
             let bundleInformation = BundleInformation(with: bundleInformationDictionary)
             
-            
             completion(Result(value: nil, error: error))
-            
-            
         }
     }
     
