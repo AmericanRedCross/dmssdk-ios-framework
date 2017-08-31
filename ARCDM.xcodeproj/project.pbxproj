@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49379F371F57F54F00CBA445 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49379F311F57F54F00CBA445 /* Utilities.swift */; };
+		493D42951F57F40100B74620 /* ThunderRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493D428C1F57F3F700B74620 /* ThunderRequest.framework */; };
+		493D42B11F57F46800B74620 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D42B01F57F46800B74620 /* ContentController.swift */; };
 		4965B7911F43463300BCEBC2 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7901F43463300BCEBC2 /* Module.swift */; };
 		4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */; };
 		4965B7951F44365700BCEBC2 /* ModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7941F44365700BCEBC2 /* ModuleManager.swift */; };
@@ -16,6 +19,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		493D428B1F57F3F700B74620 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493D42831F57F3F700B74620 /* ThunderRequest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C2E5088219C835A300350F00;
+			remoteInfo = ThunderRequest;
+		};
+		493D428D1F57F3F700B74620 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493D42831F57F3F700B74620 /* ThunderRequest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C2E5088D19C835A300350F00;
+			remoteInfo = ThunderRequestTests;
+		};
+		493D428F1F57F3F700B74620 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493D42831F57F3F700B74620 /* ThunderRequest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1177ED81BBAF18E00372D4D;
+			remoteInfo = ThunderRequestMac;
+		};
+		493D42911F57F3F700B74620 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493D42831F57F3F700B74620 /* ThunderRequest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1177EE21BBAF18E00372D4D;
+			remoteInfo = ThunderRequestMacTests;
+		};
+		493D42931F57F3F700B74620 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493D42831F57F3F700B74620 /* ThunderRequest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 49084FD11BD13DBD0012F636;
+			remoteInfo = ThunderRequestTV;
+		};
 		49A7C9CB1F41BD54006AB66E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49A7C9B71F41BD54006AB66E /* Project object */;
@@ -26,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49379F311F57F54F00CBA445 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		493D42831F57F3F700B74620 /* ThunderRequest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThunderRequest.xcodeproj; path = ThunderRequest/ThunderRequest.xcodeproj; sourceTree = SOURCE_ROOT; };
+		493D42B01F57F46800B74620 /* ContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
 		4965B7901F43463300BCEBC2 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDescriptor.swift; sourceTree = "<group>"; };
 		4965B7941F44365700BCEBC2 /* ModuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleManager.swift; sourceTree = "<group>"; };
@@ -42,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493D42951F57F40100B74620 /* ThunderRequest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +98,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		493D42841F57F3F700B74620 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				493D428C1F57F3F700B74620 /* ThunderRequest.framework */,
+				493D428E1F57F3F700B74620 /* ThunderRequestTests.xctest */,
+				493D42901F57F3F700B74620 /* ThunderRequestMac.framework */,
+				493D42921F57F3F700B74620 /* ThunderRequestMacTests.xctest */,
+				493D42941F57F3F700B74620 /* ThunderRequestTV.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		49A7C9B61F41BD54006AB66E = {
 			isa = PBXGroup;
 			children = (
@@ -77,9 +131,12 @@
 		49A7C9C21F41BD54006AB66E /* ARCDM */ = {
 			isa = PBXGroup;
 			children = (
+				49379F311F57F54F00CBA445 /* Utilities.swift */,
+				493D42B01F57F46800B74620 /* ContentController.swift */,
 				4965B7901F43463300BCEBC2 /* Module.swift */,
 				4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */,
 				4965B7941F44365700BCEBC2 /* ModuleManager.swift */,
+				49D141A21F57F3AF001DDCD4 /* Frameworks */,
 				49A7C9C31F41BD54006AB66E /* ARCDM.h */,
 				49A7C9C41F41BD54006AB66E /* Info.plist */,
 			);
@@ -93,6 +150,14 @@
 				49A7C9D01F41BD55006AB66E /* Info.plist */,
 			);
 			path = ARCDMTests;
+			sourceTree = "<group>";
+		};
+		49D141A21F57F3AF001DDCD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				493D42831F57F3F700B74620 /* ThunderRequest.xcodeproj */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +239,12 @@
 			mainGroup = 49A7C9B61F41BD54006AB66E;
 			productRefGroup = 49A7C9C11F41BD54006AB66E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 493D42841F57F3F700B74620 /* Products */;
+					ProjectRef = 493D42831F57F3F700B74620 /* ThunderRequest.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				49A7C9BF1F41BD54006AB66E /* ARCDM */,
@@ -181,6 +252,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		493D428C1F57F3F700B74620 /* ThunderRequest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ThunderRequest.framework;
+			remoteRef = 493D428B1F57F3F700B74620 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		493D428E1F57F3F700B74620 /* ThunderRequestTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ThunderRequestTests.xctest;
+			remoteRef = 493D428D1F57F3F700B74620 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		493D42901F57F3F700B74620 /* ThunderRequestMac.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ThunderRequestMac.framework;
+			remoteRef = 493D428F1F57F3F700B74620 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		493D42921F57F3F700B74620 /* ThunderRequestMacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ThunderRequestMacTests.xctest;
+			remoteRef = 493D42911F57F3F700B74620 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		493D42941F57F3F700B74620 /* ThunderRequestTV.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ThunderRequestTV.framework;
+			remoteRef = 493D42931F57F3F700B74620 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		49A7C9BE1F41BD54006AB66E /* Resources */ = {
@@ -205,7 +314,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4965B7951F44365700BCEBC2 /* ModuleManager.swift in Sources */,
+				493D42B11F57F46800B74620 /* ContentController.swift in Sources */,
 				4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */,
+				49379F371F57F54F00CBA445 /* Utilities.swift in Sources */,
 				4965B7911F43463300BCEBC2 /* Module.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
