@@ -33,7 +33,7 @@ public class ContentController {
             
             let bundleInformation = BundleInformation(with: bundleInformationDictionary)
             
-            completion(Result(value: nil, error: error))
+            completion(Result(value: bundleInformation, error: error))
         }
     }
     
