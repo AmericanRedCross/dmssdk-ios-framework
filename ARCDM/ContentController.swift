@@ -15,7 +15,25 @@ public class ContentController {
     /// The network request controller for the ARCDMS module. Responsible for handling the download of bundles and related files
     private let requestController = TSCRequestController(baseAddress: "http://ec2-54-193-52-173.us-west-1.compute.amazonaws.com/api/")
     
-    public init() {}
+    private var bundleDirectory: URL?
+    
+    public init() {
+        
+        if let _bundlePath = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).last {
+            
+            let _bundleDirectory = URL(fileURLWithPath: _bundlePath, isDirectory: true).appendingPathComponent("CIEBundle")
+            bundleDirectory = _bundleDirectory
+            
+            //Create application support directory
+            do {
+                try FileManager.default.createDirectory(atPath: _bundleDirectory.path, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print("<ARCDMS> [CRITICAL ERROR] Failed to create bundle directory at \(_bundleDirectory)")
+            }
+            
+            //TODO: Copy over the bundle from the main disk
+        }
+    }
     
     /// Retrieves information about the latest bundle/publish for a project. This can be used to compare the current bundle and determine if there is an update available
     ///
@@ -40,10 +58,103 @@ public class ContentController {
     /// Downloads a bundle for the given project and unpacks it for use.
     ///
     /// - Parameters:
-    ///   - projectID: The project ID to download the bundle for
-    ///   - language: The language code to download the bundle for. Use `getBundleInformation(for:completion:)` to find the available language code
-    ///   - completion: A Result<Bool> object where the boolean indicates success. This may also return an Error object where appropriate.
-    func downloadBundle(for projectID: String, language: String, completion: @escaping (Result<Bool>) -> Void) {}
+    ///   - url: The URL of the bundle to download. This can be a redirecting URL if appropriate as redirects will be followed
+    ///   - progress: An optional `TSCRequestProgressHandler`. Download progress and file size will be reported through this closure.
+    ///   - completion: A Result<Bool> object where the Bool indicates success or failure of downloading the file. Please note that this may return nil for the boolean if an error object is present as the error is more descriptive.
+    public func downloadBundle(from url: URL, progress: @escaping TSCRequestProgressHandler, completion: @escaping (Result<Bool>) -> Void) {
+        
+        requestController.downloadFile(withPath: url.absoluteString, progress: progress) { (fileLocation, error) in
+            
+            if let _error = error {
+                completion(Result(value: nil, error: _error))
+                return
+            }
+            
+            if let _fileLocation = fileLocation {
+                
+                //Unpack
+                if let _bundleDirectory = self.bundleDirectory {
+                    self.unpackBundle(file: _fileLocation, to: _bundleDirectory)
+                }
+                
+                completion(Result(value: true, error: nil))
+                return
+            }
+            
+            completion(Result(value: false, error: nil))
+        }
+    }
+    
+    private func deleteContents(of directory: URL) {
+        
+        let fm = FileManager.default
+        var files: [String] = []
+        
+        do {
+            files = try fm.contentsOfDirectory(atPath: directory.path)
+        } catch let error {
+            print("<ARCDMS> Failed to get files for removing bundle in directory at path: \(directory), error: \(error.localizedDescription)")
+        }
+        
+        files.forEach { (filePath) in
+            
+            do {
+                try fm.removeItem(at: directory.appendingPathComponent(filePath))
+            } catch let error {
+                print("<ARCDMS> Failed to remove file at path: \(directory)/\(filePath), error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func unpackBundle(file: URL, to destinationDirectory: URL) {
+        
+        //Rename
+//        let newURL = file.deletingPathExtension().appendingPathExtension("tar.gz")
+//        try? FileManager.default.moveItem(at: file, to: newURL)
+        
+        //Clear out existing files
+        deleteContents(of: destinationDirectory)
+        
+        
+        //
+        var data: Data
+        
+        // Read data from directory
+        do {
+            data = try Data(contentsOf: file, options: Data.ReadingOptions.mappedIfSafe)
+        } catch let error {
+            print("<ARCDMS> [Updates] Unpacking bundle failed \(error.localizedDescription)")
+            return
+        }
+        
+        let archive = "data.tar"
+        let nsData = data as NSData
+        
+        // Unzip data
+        let gunzipData = gunzip(nsData.bytes, nsData.length)
+        
+        let cDecompressed = Data(bytes: gunzipData.data, count: gunzipData.length)
+        
+        //Write unzipped data to directory
+        let directoryWriteUrl = destinationDirectory.appendingPathComponent(archive)
+        
+        do {
+            try cDecompressed.write(to:directoryWriteUrl, options: [])
+        } catch let error {
+            print("<ARCDMS> [Updates] Writing unpacked bundle failed: \(error.localizedDescription)")
+            return
+        }
+        
+        // We bridge to Objective-C here as the untar doesn't like switch CString struct
+        let arch = fopen((destinationDirectory.appendingPathComponent(archive).path as NSString).cString(using: String.Encoding.utf8.rawValue), "r")
+        
+        untar(arch, (destinationDirectory.path as NSString).cString(using: String.Encoding.utf8.rawValue))
+        
+        fclose(arch)
+        
+        //Clean up
+        try? FileManager.default.removeItem(at: destinationDirectory.appendingPathComponent(archive))
+    }
 }
 
 /// Contains information about an available storm bundle on the server
