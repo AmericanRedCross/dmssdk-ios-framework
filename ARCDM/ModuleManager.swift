@@ -10,25 +10,22 @@ import Foundation
 
 /// A manager that loads the module data and provides utilities for loading data surrounding modules
 public class ModuleManager {
-
-    public var modules: [Module]?
     
+    public var modules: [Module]?
+        
     public init() {
         
-        let filePath = Bundle.main.path(forResource: "structure", ofType: "json")
-        
-        if let _filePath = filePath, let jsonFileData = NSData(contentsOfFile: _filePath) {
+        if let _filePath = ContentController().fileUrl(forResource: "structure", withExtension: "json", inDirectory: nil) {
             
-            let jsonObjects = try? JSONSerialization.jsonObject(with: jsonFileData as Data, options: [])
-            
-            if let _jsonObjects = jsonObjects as? [[AnyHashable: Any]] {
+            if let jsonFileData = NSData(contentsOfFile: _filePath.path) {
                 
-                modules = _jsonObjects.flatMap({ Module(with: $0)})
+                let jsonObjects = try? JSONSerialization.jsonObject(with: jsonFileData as Data, options: [])
                 
+                if let _jsonObjects = jsonObjects as? [[AnyHashable: Any]] {
+                    
+                    modules = _jsonObjects.flatMap({ Module(with: $0)})
+                }
             }
-            
         }
-        
     }
-    
 }

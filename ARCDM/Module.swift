@@ -12,10 +12,13 @@
 public struct Module {
     
     /// The unique identifier of the module object
-    public var identifier: String?
+    public var identifier: Int?
     
     /// The position at which this module should be displayed when presented in a list
-    public var hierarchy: Int = 0
+    public var order: Int = 0
+    
+    /// The assosciated metadata. This contains additional information about the module object.
+    public var metadata: [AnyHashable: Any]?
     
     /// The title of the module
     public var moduleTitle: String?
@@ -23,8 +26,8 @@ public struct Module {
     /// The raw markdown content of the module
     public var content: String?
     
-    /// An array of module objects which are steps to display beneath this module when it is viewed
-    public var steps: [Module]?
+    /// An array of module objects which are objects to display beneath this module when it is viewed expanded
+    public var directories: [Module]?
     
     /// An array of file descriptors that are assosciated with this module
     public var attachments: [FileDescriptor]?
@@ -34,17 +37,19 @@ public struct Module {
     
     init(with dictionary: [AnyHashable: Any]) {
         
-        identifier = dictionary["identifier"] as? String
+        identifier = dictionary["id"] as? Int
         
-        if let _hierarchy = dictionary["hierarchy"] as? Int {
-            hierarchy = _hierarchy
+        if let _order = dictionary["order"] as? Int {
+            order = _order
         }
+        
+        metadata = dictionary["metadata"] as? [AnyHashable: Any]
         
         moduleTitle = dictionary["title"] as? String
         content = dictionary["content"] as? String
         
-        if let _steps = dictionary["directories"] as? [[AnyHashable: Any]] {
-            steps = _steps.flatMap({ Module(with: $0)})
+        if let _directories = dictionary["directories"] as? [[AnyHashable: Any]] {
+            directories = _directories.flatMap({ Module(with: $0)})
         }
         
         if let _fileDescriptors = dictionary["attachments"] as? [[AnyHashable: Any]] {

@@ -30,8 +30,6 @@ public class ContentController {
             } catch {
                 print("<ARCDMS> [CRITICAL ERROR] Failed to create bundle directory at \(_bundleDirectory)")
             }
-            
-            //TODO: Copy over the bundle from the main disk
         }
     }
     
@@ -154,6 +152,33 @@ public class ContentController {
         
         //Clean up
         try? FileManager.default.removeItem(at: destinationDirectory.appendingPathComponent(archive))
+    }
+    
+    /// Returns the file url of a file in the bundle
+    ///
+    /// - parameter forResource:   The name of the file, excluding it's file extension
+    /// - parameter withExtension: The file extension to look up
+    /// - parameter inDirectory:   A specific directory inside of the bundle to lookup (Optional)
+    ///
+    /// - returns: Returns a url for the resource if it's found
+    public func fileUrl(forResource: String, withExtension: String, inDirectory: String?) -> URL? {
+        
+        var bundleFile: URL?
+        
+        if let bundleDirectory = bundleDirectory {
+            
+            if let _inDirectory = inDirectory {
+                bundleFile = bundleDirectory.appendingPathComponent(_inDirectory).appendingPathComponent(forResource).appendingPathExtension(withExtension)
+            } else {
+                bundleFile = bundleDirectory.appendingPathComponent(forResource).appendingPathExtension(withExtension)
+            }
+        }
+        
+        if let _bundleFile = bundleFile, FileManager.default.fileExists(atPath: _bundleFile.path) {
+            return _bundleFile
+        }
+        
+        return nil
     }
 }
 
