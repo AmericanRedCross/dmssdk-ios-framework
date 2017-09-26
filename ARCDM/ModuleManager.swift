@@ -17,6 +17,8 @@ public class ModuleManager {
         
         if let _filePath = ContentController().fileUrl(forResource: "structure", withExtension: "json", inDirectory: nil) {
             
+            print("<ModuleManager> Loading data from \(_filePath)")
+            
             if let jsonFileData = NSData(contentsOfFile: _filePath.path) {
                 
                 let jsonObjects = try? JSONSerialization.jsonObject(with: jsonFileData as Data, options: [])
