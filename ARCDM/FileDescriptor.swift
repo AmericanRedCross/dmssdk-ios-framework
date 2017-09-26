@@ -36,6 +36,7 @@ public struct FileDescriptor {
     init(with dictionary: [AnyHashable: Any]) {
         
         title = dictionary["title"] as? String
+        description = dictionary["description"] as? String
         
         if let _urlString = dictionary["url"] as? String {
             url = URL(string: _urlString)
