@@ -180,6 +180,25 @@ public class ContentController {
         
         return nil
     }
+    
+    /// Provides a file URL for a file from a content path
+    ///
+    /// - Parameter contentPath: The content path, provided by the `content` property on a `Module` object
+    /// - Returns: A content path as a URL if one was found. nil if not.
+    public func fileUrl(from contentPath: String) -> URL? {
+        
+        var bundleFile: URL?
+        
+        if let bundleDirectory = bundleDirectory {
+            bundleFile = bundleDirectory.appendingPathComponent(contentPath)
+        }
+        
+        if let _bundleFile = bundleFile, FileManager.default.fileExists(atPath: _bundleFile.path) {
+            return _bundleFile
+        }
+        
+        return nil
+    }
 }
 
 /// Contains information about an available storm bundle on the server
