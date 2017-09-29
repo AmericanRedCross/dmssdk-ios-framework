@@ -13,7 +13,7 @@ import ThunderRequest
 public class ContentController {
     
     /// The network request controller for the ARCDMS module. Responsible for handling the download of bundles and related files
-    private let requestController = TSCRequestController(baseAddress: "http://ec2-54-193-52-173.us-west-1.compute.amazonaws.com/api/")
+    private let requestController = TSCRequestController(baseAddress: "https://cie.arc.cubeapis.com/api/")
     
     private var bundleDirectory: URL?
     
