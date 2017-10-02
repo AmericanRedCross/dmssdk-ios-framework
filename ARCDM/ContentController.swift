@@ -16,6 +16,7 @@ public class ContentController {
     private let requestController = TSCRequestController(baseAddress: "https://cie.arc.cubeapis.com/api/")
     
     private var bundleDirectory: URL?
+    private var documentsDirectory: URL?
     
     public init() {
         
@@ -31,6 +32,8 @@ public class ContentController {
                 print("<ARCDMS> [CRITICAL ERROR] Failed to create bundle directory at \(_bundleDirectory)")
             }
         }
+        
+        documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last
     }
     
     /// Retrieves information about the latest bundle/publish for a project. This can be used to compare the current bundle and determine if there is an update available
@@ -80,6 +83,28 @@ public class ContentController {
             }
             
             completion(Result(value: false, error: nil))
+        }
+    }
+    
+    public func downloadDocumentFile(from url: URL, progress: @escaping TSCRequestProgressHandler, completion: @escaping (Result<URL>) -> Void) {
+        
+        requestController.downloadFile(withPath: url.absoluteString, progress: progress) { (fileLocation, error) in
+            
+            if let _error = error {
+                completion(Result(value: nil, error: _error))
+                return
+            }
+            
+            if let _fileLocation = fileLocation, let _documentsDirectory = self.documentsDirectory {
+                
+                let newFilePath = _documentsDirectory.appendingPathComponent(url.lastPathComponent)
+                
+                try? FileManager.default.moveItem(at: _fileLocation, to: newFilePath)
+                
+                completion(Result(value: newFilePath, error: nil))
+                return
+            }
+            completion(Result(value: nil, error: nil))
         }
     }
     
@@ -197,6 +222,16 @@ public class ContentController {
             return _bundleFile
         }
         
+        return nil
+    }
+    
+    public func localFileURL(for remoteURL: URL) -> URL? {
+        
+        if let filePath = documentsDirectory?.appendingPathComponent(remoteURL.lastPathComponent) {
+            if FileManager.default.fileExists(atPath: filePath.path) {
+                return filePath
+            }
+        }
         return nil
     }
 }
