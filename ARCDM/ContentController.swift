@@ -262,7 +262,8 @@ public struct BundleInformation {
         if let _dateString = dataDictionary["publish_date"] as? String {
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            
             publishDate = dateFormatter.date(from: _dateString)
         }
         
