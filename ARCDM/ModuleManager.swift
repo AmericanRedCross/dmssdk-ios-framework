@@ -30,4 +30,23 @@ public class ModuleManager {
             }
         }
     }
+    
+    public func module(for identifier: Int, in modules: [Module]) -> Module? {
+        
+        for localModule in modules {
+            
+            if let moduleId = localModule.identifier, moduleId == identifier {
+                return localModule
+            }
+            
+            if let directories = localModule.directories {
+                
+                if let directoryModule = module(for: identifier, in: directories) {
+                    return directoryModule
+                }
+            }
+        }
+        
+        return nil
+    }
 }
