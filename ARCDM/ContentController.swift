@@ -18,6 +18,11 @@ public class ContentController {
     private var bundleDirectory: URL?
     private var documentsDirectory: URL?
     
+    /// The timestamp of the bundle that is currently in use by the app. Returns 0 if there is not any
+    public var currentBundleTimestamp: TimeInterval {
+        return UserDefaults.standard.value(forKey: "CurrentBundleTimestamp") as? TimeInterval ?? 0
+    }
+    
     public init() {
         
         if let _bundlePath = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).last {
