@@ -35,7 +35,9 @@ public class ModuleManager {
         
         for localModule in modules {
             
-            if let moduleId = localModule.identifier, moduleId == identifier {
+            let moduleId = localModule.identifier
+            
+            if moduleId == identifier {
                 return localModule
             }
             

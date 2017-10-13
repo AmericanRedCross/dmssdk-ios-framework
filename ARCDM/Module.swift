@@ -12,7 +12,7 @@
 public struct Module {
     
     /// The unique identifier of the module object
-    public var identifier: Int?
+    public var identifier: Int
     
     /// The position at which this module should be displayed when presented in a list
     public var order: Int = 0
@@ -35,9 +35,13 @@ public struct Module {
     /// If the module is marked as being a pert of the "Critical Path", this is true.
     public var critical: Bool = false
     
-    init(with dictionary: [AnyHashable: Any]) {
+    init?(with dictionary: [AnyHashable: Any]) {
         
-        identifier = dictionary["id"] as? Int
+        guard let identifier = dictionary["id"] as? Int else {
+            return nil
+        }
+        
+        self.identifier = identifier
         
         if let _order = dictionary["order"] as? Int {
             order = _order
