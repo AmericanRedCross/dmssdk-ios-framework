@@ -51,7 +51,7 @@ public class ContentController {
         requestController.get("projects/\(projectID)/publishes/latest") { (response, error) in
             
             guard let bundleInformationDictionary = response?.dictionary else {
-                completion(Result(value: nil, error: BundleError.InvalidDataReturned))
+                completion(Result(value: nil, error: error))
                 return
             }
             
