@@ -13,7 +13,7 @@ import ThunderRequest
 public class ContentManager {
     
     /// The network request controller for the ARCDMS module. Responsible for handling the download of bundles and related files
-    private let requestController = TSCRequestController(baseAddress: "https://cie.arc.cubeapis.com/api/")
+    private let requestController = TSCRequestController(baseAddress: Bundle.main.infoDictionary?["DMSSDKBaseURL"] as? String)
     
     /// The path to the bundle directory that contains the bundle from the DMS. Please note that this does not mean that the directory actually contains a bundle
     private var bundleDirectory: URL?
