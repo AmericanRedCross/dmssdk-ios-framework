@@ -13,7 +13,7 @@
 		493D42B11F57F46800B74620 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D42B01F57F46800B74620 /* ContentController.swift */; };
 		495A900A1F5EDEC400843EEE /* untar.h in Headers */ = {isa = PBXBuildFile; fileRef = 495A90091F5EDE7A00843EEE /* untar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		495A90171F5EE12800843EEE /* untar.c in Sources */ = {isa = PBXBuildFile; fileRef = 495A90081F5EDE7A00843EEE /* untar.c */; };
-		4965B7911F43463300BCEBC2 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7901F43463300BCEBC2 /* Module.swift */; };
+		4965B7911F43463300BCEBC2 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7901F43463300BCEBC2 /* Directory.swift */; };
 		4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */; };
 		4965B7951F44365700BCEBC2 /* ModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7941F44365700BCEBC2 /* ModuleManager.swift */; };
 		49A7C9CA1F41BD54006AB66E /* DMSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A7C9C01F41BD54006AB66E /* DMSSDK.framework */; };
@@ -82,7 +82,7 @@
 		495A90081F5EDE7A00843EEE /* untar.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = untar.c; sourceTree = "<group>"; };
 		495A90091F5EDE7A00843EEE /* untar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = untar.h; sourceTree = "<group>"; };
 		495A90151F5EE02F00843EEE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		4965B7901F43463300BCEBC2 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		4965B7901F43463300BCEBC2 /* Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDescriptor.swift; sourceTree = "<group>"; };
 		4965B7941F44365700BCEBC2 /* ModuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleManager.swift; sourceTree = "<group>"; };
 		49A7C9C01F41BD54006AB66E /* DMSSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DMSSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +160,7 @@
 			children = (
 				49379F311F57F54F00CBA445 /* Utilities.swift */,
 				493D42B01F57F46800B74620 /* ContentController.swift */,
-				4965B7901F43463300BCEBC2 /* Module.swift */,
+				4965B7901F43463300BCEBC2 /* Directory.swift */,
 				4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */,
 				4965B7941F44365700BCEBC2 /* ModuleManager.swift */,
 				49D141A21F57F3AF001DDCD4 /* Frameworks */,
@@ -348,7 +348,7 @@
 				493D42B11F57F46800B74620 /* ContentController.swift in Sources */,
 				4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */,
 				49379F371F57F54F00CBA445 /* Utilities.swift in Sources */,
-				4965B7911F43463300BCEBC2 /* Module.swift in Sources */,
+				4965B7911F43463300BCEBC2 /* Directory.swift in Sources */,
 				495A90171F5EE12800843EEE /* untar.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

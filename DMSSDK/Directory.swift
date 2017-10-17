@@ -9,7 +9,7 @@
 /// A object representation of a module.
 /// This object recurses and can be displayed in the following structure
 /// Module -> Module Step -> Step sub step -> Tools
-public struct Module {
+public struct Directory {
     
     /// The unique identifier of the module object
     public var identifier: Int
@@ -27,7 +27,7 @@ public struct Module {
     public var content: String?
     
     /// An array of module objects which are objects to display beneath this module when it is viewed expanded
-    public var directories: [Module]?
+    public var directories: [Directory]?
     
     /// An array of file descriptors that are assosciated with this module
     public var attachments: [FileDescriptor]?
@@ -53,7 +53,7 @@ public struct Module {
         content = dictionary["content"] as? String
         
         if let _directories = dictionary["directories"] as? [[AnyHashable: Any]] {
-            directories = _directories.flatMap({ Module(with: $0)})
+            directories = _directories.flatMap({ Directory(with: $0)})
         }
         
         if let _fileDescriptors = dictionary["attachments"] as? [[AnyHashable: Any]] {
