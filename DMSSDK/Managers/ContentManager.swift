@@ -10,12 +10,15 @@ import Foundation
 import ThunderRequest
 
 /// A controller responsible for managing content and bundles. This includes facilitating the downloads and updates of new bundle content.
-public class ContentController {
+public class ContentManager {
     
-    /// The network request controller for the ARCDMS module. Responsible for handling the download of bundles and related files
-    private let requestController = TSCRequestController(baseAddress: "https://cie.arc.cubeapis.com/api/")
+    /// The network request controller for the DMSSDK module. Responsible for handling the download of bundles and related files
+    private let requestController = TSCRequestController(baseAddress: Bundle.main.infoDictionary?["DMSSDKBaseURL"] as? String)
     
+    /// The path to the bundle directory that contains the bundle from the DMS. Please note that this does not mean that the directory actually contains a bundle
     private var bundleDirectory: URL?
+    
+    /// The path to the directory that contains any documents that have been downloaded by the framework
     private var documentsDirectory: URL?
     
     /// The timestamp of the bundle that is currently in use by the app. Returns 0 if there is not any
@@ -23,6 +26,7 @@ public class ContentController {
         return UserDefaults.standard.value(forKey: "CurrentBundleTimestamp") as? TimeInterval ?? 0
     }
     
+    /// Initialises the content controller and creates the directories for the bundle if they are missing
     public init() {
         
         if let _bundlePath = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).last {
@@ -34,7 +38,7 @@ public class ContentController {
             do {
                 try FileManager.default.createDirectory(atPath: _bundleDirectory.path, withIntermediateDirectories: true, attributes: nil)
             } catch {
-                print("<ARCDMS> [CRITICAL ERROR] Failed to create bundle directory at \(_bundleDirectory)")
+                print("<DMSSDK> [CRITICAL ERROR] Failed to create bundle directory at \(_bundleDirectory)")
             }
         }
         
@@ -67,6 +71,9 @@ public class ContentController {
     ///   - url: The URL of the bundle to download. This can be a redirecting URL if appropriate as redirects will be followed
     ///   - progress: An optional `TSCRequestProgressHandler`. Download progress and file size will be reported through this closure.
     ///   - completion: A Result<Bool> object where the Bool indicates success or failure of downloading the file. Please note that this may return nil for the boolean if an error object is present as the error is more descriptive.
+    ///
+    /// - Warning:
+    /// Calling this method will remove the existing bundle completely and replace it with the newly downloaded bundle.
     public func downloadBundle(from url: URL, progress: @escaping TSCRequestProgressHandler, completion: @escaping (Result<Bool>) -> Void) {
         
         requestController.downloadFile(withPath: url.absoluteString, progress: progress) { (fileLocation, error) in
@@ -91,6 +98,12 @@ public class ContentController {
         }
     }
     
+    /// Downloads the file from a given url and stores it in the `Documents` directory for the app
+    ///
+    /// - Parameters:
+    ///   - url: The URL of the file to download. This should be the full URL to the .ppt, .docx, .pdf, etc.
+    ///   - progress: A closure that will periodically be called with an update on the progress of the file download
+    ///   - completion: A closure to be called once the download completes. This will be called for both success or failure with a `Result` object
     public func downloadDocumentFile(from url: URL, progress: @escaping TSCRequestProgressHandler, completion: @escaping (Result<URL>) -> Void) {
         
         requestController.downloadFile(withPath: url.absoluteString, progress: progress) { (fileLocation, error) in
@@ -121,7 +134,7 @@ public class ContentController {
         do {
             files = try fm.contentsOfDirectory(atPath: directory.path)
         } catch let error {
-            print("<ARCDMS> Failed to get files for removing bundle in directory at path: \(directory), error: \(error.localizedDescription)")
+            print("<DMSSDK> Failed to get files for removing bundle in directory at path: \(directory), error: \(error.localizedDescription)")
         }
         
         files.forEach { (filePath) in
@@ -129,29 +142,23 @@ public class ContentController {
             do {
                 try fm.removeItem(at: directory.appendingPathComponent(filePath))
             } catch let error {
-                print("<ARCDMS> Failed to remove file at path: \(directory)/\(filePath), error: \(error.localizedDescription)")
+                print("<DMSSDK> Failed to remove file at path: \(directory)/\(filePath), error: \(error.localizedDescription)")
             }
         }
     }
     
     private func unpackBundle(file: URL, to destinationDirectory: URL) {
-        
-        //Rename
-//        let newURL = file.deletingPathExtension().appendingPathExtension("tar.gz")
-//        try? FileManager.default.moveItem(at: file, to: newURL)
-        
+
         //Clear out existing files
         deleteContents(of: destinationDirectory)
-        
-        
-        //
+
         var data: Data
         
         // Read data from directory
         do {
             data = try Data(contentsOf: file, options: Data.ReadingOptions.mappedIfSafe)
         } catch let error {
-            print("<ARCDMS> [Updates] Unpacking bundle failed \(error.localizedDescription)")
+            print("<DMSSDK> [Updates] Unpacking bundle failed \(error.localizedDescription)")
             return
         }
         
@@ -169,7 +176,7 @@ public class ContentController {
         do {
             try cDecompressed.write(to:directoryWriteUrl, options: [])
         } catch let error {
-            print("<ARCDMS> [Updates] Writing unpacked bundle failed: \(error.localizedDescription)")
+            print("<DMSSDK> [Updates] Writing unpacked bundle failed: \(error.localizedDescription)")
             return
         }
         
@@ -213,7 +220,7 @@ public class ContentController {
     
     /// Provides a file URL for a file from a content path
     ///
-    /// - Parameter contentPath: The content path, provided by the `content` property on a `Module` object
+    /// - Parameter contentPath: The content path, provided by the `content` property on a `Directory` object
     /// - Returns: A content path as a URL if one was found. nil if not.
     public func fileUrl(from contentPath: String) -> URL? {
         
@@ -230,6 +237,10 @@ public class ContentController {
         return nil
     }
     
+    /// Checks the local disk to see if we have already downloaded a file for a remote URL.
+    ///
+    /// - Parameter remoteURL: The full remote URL of the document to check for
+    /// - Returns: The local file URL for the remote file, if it exists. Returns nil if it is not available locally.
     public func localFileURL(for remoteURL: URL) -> URL? {
         
         if let filePath = documentsDirectory?.appendingPathComponent(remoteURL.lastPathComponent) {
@@ -280,6 +291,7 @@ public struct BundleInformation {
     }
 }
 
+/// An enum representing possible errors that may occur when attempting to download bundle data
 public enum BundleError: Error {
     /** The server returned an invalid response that could not be parsed into useful data */
     case InvalidDataReturned

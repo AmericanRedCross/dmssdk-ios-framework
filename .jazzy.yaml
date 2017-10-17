@@ -1,0 +1,8 @@
+module: DMSSDK
+author: 3 SIDED CUBE
+author_url: https://3sidedcube.com/
+github_url: https://github.com/3sidedcube/ARCDMSSDK
+clean: true
+exclude: [DMSSDK/Utilities.swift]
+copyright: '© 2017 [3 SIDED CUBE](https://3sidedcube.com).'
+readme: README.md

@@ -72,6 +72,5 @@ fastlane/test_output
 
 # End of https://www.gitignore.io/api/swift
 
-International Manual/Bundle
-International Manual/Bundle*
-International Manual/[0-9]*
+build/*
+docs/*

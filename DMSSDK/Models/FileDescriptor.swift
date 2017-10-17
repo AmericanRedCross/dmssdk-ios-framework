@@ -1,6 +1,6 @@
 //
 //  FileDescriptor.swift
-//  ARCDM
+//  DMSSDK
 //
 //  Created by Matthew Cheetham on 16/08/2017.
 //  Copyright © 2017 3 SIDED CUBE. All rights reserved.
@@ -24,12 +24,6 @@ public struct FileDescriptor {
     /// A description of the file to give a user more context before downloading
     public var description: String?
     
-    /// The time/date at which the file was uploaded
-    public var timestamp: TimeInterval?
-    
-    /// If the file is marked as featured on the server, this will be true.
-    public var featured: Bool = false
-    
     /// Initialises a new FileDescriptor from a dictionary
     ///
     /// - Parameter dictionary: The dictionary entry loaded from a json file
@@ -44,9 +38,5 @@ public struct FileDescriptor {
         
         mime = dictionary["mime"] as? String
         size = dictionary["size"] as? Double
-        
-        if let _featured = dictionary["featured"] as? Bool {
-            featured = _featured
-        }
     }
 }

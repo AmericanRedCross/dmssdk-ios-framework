@@ -10,15 +10,15 @@
 		4912BAC01F5ED2EF00AD7100 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 49379FDE1F5D8FB800CBA445 /* libz.tbd */; };
 		49379F371F57F54F00CBA445 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49379F311F57F54F00CBA445 /* Utilities.swift */; };
 		493D42951F57F40100B74620 /* ThunderRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493D428C1F57F3F700B74620 /* ThunderRequest.framework */; };
-		493D42B11F57F46800B74620 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D42B01F57F46800B74620 /* ContentController.swift */; };
+		493D42B11F57F46800B74620 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D42B01F57F46800B74620 /* ContentManager.swift */; };
 		495A900A1F5EDEC400843EEE /* untar.h in Headers */ = {isa = PBXBuildFile; fileRef = 495A90091F5EDE7A00843EEE /* untar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		495A90171F5EE12800843EEE /* untar.c in Sources */ = {isa = PBXBuildFile; fileRef = 495A90081F5EDE7A00843EEE /* untar.c */; };
-		4965B7911F43463300BCEBC2 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7901F43463300BCEBC2 /* Module.swift */; };
+		4965B7911F43463300BCEBC2 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7901F43463300BCEBC2 /* Directory.swift */; };
 		4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */; };
-		4965B7951F44365700BCEBC2 /* ModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7941F44365700BCEBC2 /* ModuleManager.swift */; };
-		49A7C9CA1F41BD54006AB66E /* ARCDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A7C9C01F41BD54006AB66E /* ARCDM.framework */; };
-		49A7C9CF1F41BD54006AB66E /* ARCDMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7C9CE1F41BD54006AB66E /* ARCDMTests.swift */; };
-		49A7C9D11F41BD55006AB66E /* ARCDM.h in Headers */ = {isa = PBXBuildFile; fileRef = 49A7C9C31F41BD54006AB66E /* ARCDM.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4965B7951F44365700BCEBC2 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7941F44365700BCEBC2 /* DirectoryManager.swift */; };
+		49A7C9CA1F41BD54006AB66E /* DMSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A7C9C01F41BD54006AB66E /* DMSSDK.framework */; };
+		49A7C9CF1F41BD54006AB66E /* DMSSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7C9CE1F41BD54006AB66E /* DMSSDKTests.swift */; };
+		49A7C9D11F41BD55006AB66E /* DMSSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 49A7C9C31F41BD54006AB66E /* DMSSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,18 +78,18 @@
 		49379F311F57F54F00CBA445 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		49379FDE1F5D8FB800CBA445 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		493D42831F57F3F700B74620 /* ThunderRequest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThunderRequest.xcodeproj; path = ThunderRequest/ThunderRequest.xcodeproj; sourceTree = SOURCE_ROOT; };
-		493D42B01F57F46800B74620 /* ContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
+		493D42B01F57F46800B74620 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		495A90081F5EDE7A00843EEE /* untar.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = untar.c; sourceTree = "<group>"; };
 		495A90091F5EDE7A00843EEE /* untar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = untar.h; sourceTree = "<group>"; };
 		495A90151F5EE02F00843EEE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		4965B7901F43463300BCEBC2 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		4965B7901F43463300BCEBC2 /* Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDescriptor.swift; sourceTree = "<group>"; };
-		4965B7941F44365700BCEBC2 /* ModuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleManager.swift; sourceTree = "<group>"; };
-		49A7C9C01F41BD54006AB66E /* ARCDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ARCDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		49A7C9C31F41BD54006AB66E /* ARCDM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCDM.h; sourceTree = "<group>"; };
+		4965B7941F44365700BCEBC2 /* DirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryManager.swift; sourceTree = "<group>"; };
+		49A7C9C01F41BD54006AB66E /* DMSSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DMSSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A7C9C31F41BD54006AB66E /* DMSSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSSDK.h; sourceTree = "<group>"; };
 		49A7C9C41F41BD54006AB66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49A7C9C91F41BD54006AB66E /* ARCDMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARCDMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49A7C9CE1F41BD54006AB66E /* ARCDMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCDMTests.swift; sourceTree = "<group>"; };
+		49A7C9C91F41BD54006AB66E /* DMSSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DMSSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A7C9CE1F41BD54006AB66E /* DMSSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSSDKTests.swift; sourceTree = "<group>"; };
 		49A7C9D01F41BD55006AB66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A7C9CA1F41BD54006AB66E /* ARCDM.framework in Frameworks */,
+				49A7C9CA1F41BD54006AB66E /* DMSSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,11 +136,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		496E46811F961EC6003F34B8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				493D42B01F57F46800B74620 /* ContentManager.swift */,
+				4965B7941F44365700BCEBC2 /* DirectoryManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		496E46821F961ECD003F34B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4965B7901F43463300BCEBC2 /* Directory.swift */,
+				4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		49A7C9B61F41BD54006AB66E = {
 			isa = PBXGroup;
 			children = (
-				49A7C9C21F41BD54006AB66E /* ARCDM */,
-				49A7C9CD1F41BD54006AB66E /* ARCDMTests */,
+				49A7C9C21F41BD54006AB66E /* DMSSDK */,
+				49A7C9CD1F41BD54006AB66E /* DMSSDKTests */,
 				49A7C9C11F41BD54006AB66E /* Products */,
 				49379FDD1F5D8FB700CBA445 /* Frameworks */,
 			);
@@ -149,34 +167,32 @@
 		49A7C9C11F41BD54006AB66E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49A7C9C01F41BD54006AB66E /* ARCDM.framework */,
-				49A7C9C91F41BD54006AB66E /* ARCDMTests.xctest */,
+				49A7C9C01F41BD54006AB66E /* DMSSDK.framework */,
+				49A7C9C91F41BD54006AB66E /* DMSSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		49A7C9C21F41BD54006AB66E /* ARCDM */ = {
+		49A7C9C21F41BD54006AB66E /* DMSSDK */ = {
 			isa = PBXGroup;
 			children = (
-				49379F311F57F54F00CBA445 /* Utilities.swift */,
-				493D42B01F57F46800B74620 /* ContentController.swift */,
-				4965B7901F43463300BCEBC2 /* Module.swift */,
-				4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */,
-				4965B7941F44365700BCEBC2 /* ModuleManager.swift */,
+				496E46811F961EC6003F34B8 /* Managers */,
+				496E46821F961ECD003F34B8 /* Models */,
 				49D141A21F57F3AF001DDCD4 /* Frameworks */,
-				49A7C9C31F41BD54006AB66E /* ARCDM.h */,
+				49379F311F57F54F00CBA445 /* Utilities.swift */,
+				49A7C9C31F41BD54006AB66E /* DMSSDK.h */,
 				49A7C9C41F41BD54006AB66E /* Info.plist */,
 			);
-			path = ARCDM;
+			path = DMSSDK;
 			sourceTree = "<group>";
 		};
-		49A7C9CD1F41BD54006AB66E /* ARCDMTests */ = {
+		49A7C9CD1F41BD54006AB66E /* DMSSDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				49A7C9CE1F41BD54006AB66E /* ARCDMTests.swift */,
+				49A7C9CE1F41BD54006AB66E /* DMSSDKTests.swift */,
 				49A7C9D01F41BD55006AB66E /* Info.plist */,
 			);
-			path = ARCDMTests;
+			path = DMSSDKTests;
 			sourceTree = "<group>";
 		};
 		49D141A21F57F3AF001DDCD4 /* Frameworks */ = {
@@ -196,7 +212,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A7C9D11F41BD55006AB66E /* ARCDM.h in Headers */,
+				49A7C9D11F41BD55006AB66E /* DMSSDK.h in Headers */,
 				495A900A1F5EDEC400843EEE /* untar.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,9 +220,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		49A7C9BF1F41BD54006AB66E /* ARCDM */ = {
+		49A7C9BF1F41BD54006AB66E /* DMSSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49A7C9D41F41BD55006AB66E /* Build configuration list for PBXNativeTarget "ARCDM" */;
+			buildConfigurationList = 49A7C9D41F41BD55006AB66E /* Build configuration list for PBXNativeTarget "DMSSDK" */;
 			buildPhases = (
 				49A7C9BB1F41BD54006AB66E /* Sources */,
 				49A7C9BC1F41BD54006AB66E /* Frameworks */,
@@ -218,14 +234,14 @@
 			dependencies = (
 				4912BAC21F5ED54800AD7100 /* PBXTargetDependency */,
 			);
-			name = ARCDM;
+			name = DMSSDK;
 			productName = ARCDM;
-			productReference = 49A7C9C01F41BD54006AB66E /* ARCDM.framework */;
+			productReference = 49A7C9C01F41BD54006AB66E /* DMSSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		49A7C9C81F41BD54006AB66E /* ARCDMTests */ = {
+		49A7C9C81F41BD54006AB66E /* DMSSDKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49A7C9D71F41BD55006AB66E /* Build configuration list for PBXNativeTarget "ARCDMTests" */;
+			buildConfigurationList = 49A7C9D71F41BD55006AB66E /* Build configuration list for PBXNativeTarget "DMSSDKTests" */;
 			buildPhases = (
 				49A7C9C51F41BD54006AB66E /* Sources */,
 				49A7C9C61F41BD54006AB66E /* Frameworks */,
@@ -236,9 +252,9 @@
 			dependencies = (
 				49A7C9CC1F41BD54006AB66E /* PBXTargetDependency */,
 			);
-			name = ARCDMTests;
+			name = DMSSDKTests;
 			productName = ARCDMTests;
-			productReference = 49A7C9C91F41BD54006AB66E /* ARCDMTests.xctest */;
+			productReference = 49A7C9C91F41BD54006AB66E /* DMSSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -260,7 +276,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 49A7C9BA1F41BD54006AB66E /* Build configuration list for PBXProject "ARCDM" */;
+			buildConfigurationList = 49A7C9BA1F41BD54006AB66E /* Build configuration list for PBXProject "DMSSDK" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -278,8 +294,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				49A7C9BF1F41BD54006AB66E /* ARCDM */,
-				49A7C9C81F41BD54006AB66E /* ARCDMTests */,
+				49A7C9BF1F41BD54006AB66E /* DMSSDK */,
+				49A7C9C81F41BD54006AB66E /* DMSSDKTests */,
 			);
 		};
 /* End PBXProject section */
@@ -344,11 +360,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4965B7951F44365700BCEBC2 /* ModuleManager.swift in Sources */,
-				493D42B11F57F46800B74620 /* ContentController.swift in Sources */,
+				4965B7951F44365700BCEBC2 /* DirectoryManager.swift in Sources */,
+				493D42B11F57F46800B74620 /* ContentManager.swift in Sources */,
 				4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */,
 				49379F371F57F54F00CBA445 /* Utilities.swift in Sources */,
-				4965B7911F43463300BCEBC2 /* Module.swift in Sources */,
+				4965B7911F43463300BCEBC2 /* Directory.swift in Sources */,
 				495A90171F5EE12800843EEE /* untar.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A7C9CF1F41BD54006AB66E /* ARCDMTests.swift in Sources */,
+				49A7C9CF1F41BD54006AB66E /* DMSSDKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +387,7 @@
 		};
 		49A7C9CC1F41BD54006AB66E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 49A7C9BF1F41BD54006AB66E /* ARCDM */;
+			target = 49A7C9BF1F41BD54006AB66E /* DMSSDK */;
 			targetProxy = 49A7C9CB1F41BD54006AB66E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -499,12 +515,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/ARCDM/Frameworks/ZIP\"/**";
-				INFOPLIST_FILE = ARCDM/Info.plist;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/DMSSDK/Frameworks/ZIP\"/**";
+				INFOPLIST_FILE = "$(SRCROOT)/DMSSDK/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.redcross.ARCDM;
+				PRODUCT_BUNDLE_IDENTIFIER = org.redcross.DMSSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -523,12 +539,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/ARCDM/Frameworks/ZIP\"/**";
-				INFOPLIST_FILE = ARCDM/Info.plist;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/DMSSDK/Frameworks/ZIP\"/**";
+				INFOPLIST_FILE = "$(SRCROOT)/DMSSDK/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.redcross.ARCDM;
+				PRODUCT_BUNDLE_IDENTIFIER = org.redcross.DMSSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -541,9 +557,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = ARCDMTests/Info.plist;
+				INFOPLIST_FILE = DMSSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.redcross.ARCDMTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.redcross.DMSSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -554,9 +570,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = ARCDMTests/Info.plist;
+				INFOPLIST_FILE = DMSSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.redcross.ARCDMTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.redcross.DMSSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -566,7 +582,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		49A7C9BA1F41BD54006AB66E /* Build configuration list for PBXProject "ARCDM" */ = {
+		49A7C9BA1F41BD54006AB66E /* Build configuration list for PBXProject "DMSSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49A7C9D21F41BD55006AB66E /* Debug */,
@@ -575,7 +591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49A7C9D41F41BD55006AB66E /* Build configuration list for PBXNativeTarget "ARCDM" */ = {
+		49A7C9D41F41BD55006AB66E /* Build configuration list for PBXNativeTarget "DMSSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49A7C9D51F41BD55006AB66E /* Debug */,
@@ -584,7 +600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49A7C9D71F41BD55006AB66E /* Build configuration list for PBXNativeTarget "ARCDMTests" */ = {
+		49A7C9D71F41BD55006AB66E /* Build configuration list for PBXNativeTarget "DMSSDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49A7C9D81F41BD55006AB66E /* Debug */,
