@@ -294,6 +294,7 @@ public struct BundleInformation {
     }
 }
 
+/// An enum representing possible errors that may occur when attempting to download bundle data
 public enum BundleError: Error {
     /** The server returned an invalid response that could not be parsed into useful data */
     case InvalidDataReturned
