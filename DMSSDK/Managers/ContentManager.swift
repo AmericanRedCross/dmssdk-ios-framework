@@ -71,6 +71,9 @@ public class ContentManager {
     ///   - url: The URL of the bundle to download. This can be a redirecting URL if appropriate as redirects will be followed
     ///   - progress: An optional `TSCRequestProgressHandler`. Download progress and file size will be reported through this closure.
     ///   - completion: A Result<Bool> object where the Bool indicates success or failure of downloading the file. Please note that this may return nil for the boolean if an error object is present as the error is more descriptive.
+    ///
+    /// - Warning:
+    /// Calling this method will remove the existing bundle completely and replace it with the newly downloaded bundle.
     public func downloadBundle(from url: URL, progress: @escaping TSCRequestProgressHandler, completion: @escaping (Result<Bool>) -> Void) {
         
         requestController.downloadFile(withPath: url.absoluteString, progress: progress) { (fileLocation, error) in
