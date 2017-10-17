@@ -11,7 +11,7 @@ import Foundation
 /// A manager that loads the module data and provides utilities for loading data surrounding modules
 public class DirectoryManager {
     
-    public var modules: [Directory]?
+    public var directories: [Directory]?
         
     public init() {
         
@@ -25,7 +25,7 @@ public class DirectoryManager {
                 
                 if let _jsonObjects = jsonObjects as? [[AnyHashable: Any]] {
                     
-                    modules = _jsonObjects.flatMap({ Directory(with: $0)})
+                    directories = _jsonObjects.flatMap({ Directory(with: $0)})
                 }
             }
         }
