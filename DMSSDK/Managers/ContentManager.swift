@@ -145,16 +145,10 @@ public class ContentManager {
     }
     
     private func unpackBundle(file: URL, to destinationDirectory: URL) {
-        
-        //Rename
-//        let newURL = file.deletingPathExtension().appendingPathExtension("tar.gz")
-//        try? FileManager.default.moveItem(at: file, to: newURL)
-        
+
         //Clear out existing files
         deleteContents(of: destinationDirectory)
-        
-        
-        //
+
         var data: Data
         
         // Read data from directory
