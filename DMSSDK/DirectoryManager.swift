@@ -16,9 +16,9 @@ public class DirectoryManager {
     
     /// Initialises the manager with an optional array of directories. If you wish to initialise using the `structure.json` from the parent app's bundle, please call the `init()` method
     ///
-    /// - Parameter dataSource: An array of Directory objects that have been loaded from elsewhere
-    public init(dataSource: [Directory]?) {
-        directories = dataSource
+    /// - Parameter directories: An array of Directory objects that have been loaded from elsewhere
+    public init(directories: [Directory]?) {
+        self.directories = directories
     }
         
     /// Initialises the `DirectoryManager` using `structure.json` from the parent app's bundle if available.
@@ -33,19 +33,12 @@ public class DirectoryManager {
                 if let _jsonObjects = jsonObjects as? [[AnyHashable: Any]] {
                     
                     let directories = _jsonObjects.flatMap({ Directory(with: $0)})
-                    self.init(dataSource: directories)
+                    self.init(directories: directories)
                     return
                 }
             }
         }
-        self.init(dataSource: nil)
-    }
-    
-    /// Initialises the `DirectoryManager` with a `String` that can be parsed into an array of `Directory` objects
-    ///
-    /// - Parameter dataSource: The `String` that can be parsed into `Directory` objects
-    public convenience init(dataSource: String) {
-        self.init(dataSource: dataSource)
+        self.init(directories: nil)
     }
     
     /// Initialises the `DirectoryManager` with a JSON Object that can be parsed into an array of `Directory` objects
@@ -54,7 +47,7 @@ public class DirectoryManager {
     public convenience init(dataSource: Any) {
         
         guard JSONSerialization.isValidJSONObject(dataSource) else {
-            self.init(dataSource: nil)
+            self.init(directories: nil)
             return
         }
         
