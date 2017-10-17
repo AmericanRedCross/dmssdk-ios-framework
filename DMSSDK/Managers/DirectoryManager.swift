@@ -1,6 +1,6 @@
 //
-//  ModuleManager.swift
-//  ARCDM
+//  DirectoryManager.swift
+//  DMSSDK
 //
 //  Created by Matthew Cheetham on 16/08/2017.
 //  Copyright © 2017 3 SIDED CUBE. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// A manager that loads the module data and provides utilities for loading data surrounding modules
+/// A manager that loads the directory data and provides utilities for loading data surrounding directories
 public class DirectoryManager {
     
     /// An array of top level directories loaded using one of the `DirectoryManager` initialisers

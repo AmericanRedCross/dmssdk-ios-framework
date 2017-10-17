@@ -12,7 +12,7 @@ import ThunderRequest
 /// A controller responsible for managing content and bundles. This includes facilitating the downloads and updates of new bundle content.
 public class ContentManager {
     
-    /// The network request controller for the ARCDMS module. Responsible for handling the download of bundles and related files
+    /// The network request controller for the DMSSDK module. Responsible for handling the download of bundles and related files
     private let requestController = TSCRequestController(baseAddress: Bundle.main.infoDictionary?["DMSSDKBaseURL"] as? String)
     
     /// The path to the bundle directory that contains the bundle from the DMS. Please note that this does not mean that the directory actually contains a bundle
@@ -38,7 +38,7 @@ public class ContentManager {
             do {
                 try FileManager.default.createDirectory(atPath: _bundleDirectory.path, withIntermediateDirectories: true, attributes: nil)
             } catch {
-                print("<ARCDMS> [CRITICAL ERROR] Failed to create bundle directory at \(_bundleDirectory)")
+                print("<DMSSDK> [CRITICAL ERROR] Failed to create bundle directory at \(_bundleDirectory)")
             }
         }
         
@@ -134,7 +134,7 @@ public class ContentManager {
         do {
             files = try fm.contentsOfDirectory(atPath: directory.path)
         } catch let error {
-            print("<ARCDMS> Failed to get files for removing bundle in directory at path: \(directory), error: \(error.localizedDescription)")
+            print("<DMSSDK> Failed to get files for removing bundle in directory at path: \(directory), error: \(error.localizedDescription)")
         }
         
         files.forEach { (filePath) in
@@ -142,7 +142,7 @@ public class ContentManager {
             do {
                 try fm.removeItem(at: directory.appendingPathComponent(filePath))
             } catch let error {
-                print("<ARCDMS> Failed to remove file at path: \(directory)/\(filePath), error: \(error.localizedDescription)")
+                print("<DMSSDK> Failed to remove file at path: \(directory)/\(filePath), error: \(error.localizedDescription)")
             }
         }
     }
@@ -158,7 +158,7 @@ public class ContentManager {
         do {
             data = try Data(contentsOf: file, options: Data.ReadingOptions.mappedIfSafe)
         } catch let error {
-            print("<ARCDMS> [Updates] Unpacking bundle failed \(error.localizedDescription)")
+            print("<DMSSDK> [Updates] Unpacking bundle failed \(error.localizedDescription)")
             return
         }
         
@@ -176,7 +176,7 @@ public class ContentManager {
         do {
             try cDecompressed.write(to:directoryWriteUrl, options: [])
         } catch let error {
-            print("<ARCDMS> [Updates] Writing unpacked bundle failed: \(error.localizedDescription)")
+            print("<DMSSDK> [Updates] Writing unpacked bundle failed: \(error.localizedDescription)")
             return
         }
         
@@ -220,7 +220,7 @@ public class ContentManager {
     
     /// Provides a file URL for a file from a content path
     ///
-    /// - Parameter contentPath: The content path, provided by the `content` property on a `Module` object
+    /// - Parameter contentPath: The content path, provided by the `content` property on a `Directory` object
     /// - Returns: A content path as a URL if one was found. nil if not.
     public func fileUrl(from contentPath: String) -> URL? {
         

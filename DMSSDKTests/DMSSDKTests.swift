@@ -1,6 +1,6 @@
 //
-//  ARCDMTests.swift
-//  ARCDMTests
+//  DMSSDKTests.swift
+//  DMSSDKTests
 //
 //  Created by Matthew Cheetham on 14/08/2017.
 //  Copyright © 2017 3 SIDED CUBE. All rights reserved.

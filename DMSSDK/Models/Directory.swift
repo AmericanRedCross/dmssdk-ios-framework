@@ -1,38 +1,37 @@
 //
-//  Module.swift
-//  ARCDM
+//  Directory.swift
+//  DMSSDK
 //
 //  Created by Matthew Cheetham on 15/08/2017.
 //  Copyright © 2017 3 SIDED CUBE. All rights reserved.
 //
 
-/// A object representation of a module.
-/// This object recurses and can be displayed in the following structure
-/// Module -> Module Step -> Step sub step -> Tools
+/// A object representation of a directory.
+/// This object recurses to an unknown number of levels through the `directories` variable
 public struct Directory {
     
-    /// The unique identifier of the module object
+    /// The unique identifier of the directory object
     public var identifier: Int
     
     /// The identifier of the parent Directory if one exists
     public var parentIdentifier: Int?
     
-    /// The position at which this module should be displayed when presented in a list
+    /// The position at which this directory should be displayed when presented in a list
     public var order: Int = 0
     
-    /// The assosciated metadata. This contains additional information about the module object.
+    /// The assosciated metadata. This contains additional information about the directory object.
     public var metadata: [AnyHashable: Any]?
     
-    /// The title of the module
-    public var moduleTitle: String?
+    /// The title of the directory
+    public var directoryTitle: String?
     
-    /// The raw markdown content of the module
+    /// The raw markdown content of the directory
     public var content: String?
     
-    /// An array of module objects which are objects to display beneath this module when it is viewed expanded
+    /// An array of directory objects which are objects to display beneath this directory when it is viewed expanded
     public var directories: [Directory]?
     
-    /// An array of file descriptors that are assosciated with this module
+    /// An array of file descriptors that are assosciated with this directory
     public var attachments: [FileDescriptor]?
     
     init?(with dictionary: [AnyHashable: Any]) {
@@ -51,7 +50,7 @@ public struct Directory {
         
         metadata = dictionary["metadata"] as? [AnyHashable: Any]
         
-        moduleTitle = dictionary["title"] as? String
+        directoryTitle = dictionary["title"] as? String
         content = dictionary["content"] as? String
         
         if let _directories = dictionary["directories"] as? [[AnyHashable: Any]] {
