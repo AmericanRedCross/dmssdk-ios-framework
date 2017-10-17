@@ -17,8 +17,9 @@
 		4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */; };
 		4965B7951F44365700BCEBC2 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7941F44365700BCEBC2 /* DirectoryManager.swift */; };
 		49A7C9CA1F41BD54006AB66E /* DMSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A7C9C01F41BD54006AB66E /* DMSSDK.framework */; };
-		49A7C9CF1F41BD54006AB66E /* DMSSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7C9CE1F41BD54006AB66E /* DMSSDKTests.swift */; };
 		49A7C9D11F41BD55006AB66E /* DMSSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 49A7C9C31F41BD54006AB66E /* DMSSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49FFEF3C1F96415800B0B7B3 /* DirectoryManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FFEF3B1F96415800B0B7B3 /* DirectoryManagerTests.swift */; };
+		49FFEF431F96493800B0B7B3 /* structure.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FFEF421F96454600B0B7B3 /* structure.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,8 +90,9 @@
 		49A7C9C31F41BD54006AB66E /* DMSSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSSDK.h; sourceTree = "<group>"; };
 		49A7C9C41F41BD54006AB66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49A7C9C91F41BD54006AB66E /* DMSSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DMSSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49A7C9CE1F41BD54006AB66E /* DMSSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSSDKTests.swift; sourceTree = "<group>"; };
 		49A7C9D01F41BD55006AB66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49FFEF3B1F96415800B0B7B3 /* DirectoryManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryManagerTests.swift; sourceTree = "<group>"; };
+		49FFEF421F96454600B0B7B3 /* structure.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = structure.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +191,8 @@
 		49A7C9CD1F41BD54006AB66E /* DMSSDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				49A7C9CE1F41BD54006AB66E /* DMSSDKTests.swift */,
+				49FFEF3B1F96415800B0B7B3 /* DirectoryManagerTests.swift */,
+				49FFEF421F96454600B0B7B3 /* structure.json */,
 				49A7C9D01F41BD55006AB66E /* Info.plist */,
 			);
 			path = DMSSDKTests;
@@ -350,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FFEF431F96493800B0B7B3 /* structure.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A7C9CF1F41BD54006AB66E /* DMSSDKTests.swift in Sources */,
+				49FFEF3C1F96415800B0B7B3 /* DirectoryManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
