@@ -9,7 +9,7 @@
 import Foundation
 
 /// A manager that loads the module data and provides utilities for loading data surrounding modules
-public class ModuleManager {
+public class DirectoryManager {
     
     public var modules: [Directory]?
         

@@ -15,7 +15,7 @@
 		495A90171F5EE12800843EEE /* untar.c in Sources */ = {isa = PBXBuildFile; fileRef = 495A90081F5EDE7A00843EEE /* untar.c */; };
 		4965B7911F43463300BCEBC2 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7901F43463300BCEBC2 /* Directory.swift */; };
 		4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */; };
-		4965B7951F44365700BCEBC2 /* ModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7941F44365700BCEBC2 /* ModuleManager.swift */; };
+		4965B7951F44365700BCEBC2 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7941F44365700BCEBC2 /* DirectoryManager.swift */; };
 		49A7C9CA1F41BD54006AB66E /* DMSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A7C9C01F41BD54006AB66E /* DMSSDK.framework */; };
 		49A7C9CF1F41BD54006AB66E /* DMSSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7C9CE1F41BD54006AB66E /* DMSSDKTests.swift */; };
 		49A7C9D11F41BD55006AB66E /* DMSSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 49A7C9C31F41BD54006AB66E /* DMSSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -84,7 +84,7 @@
 		495A90151F5EE02F00843EEE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		4965B7901F43463300BCEBC2 /* Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDescriptor.swift; sourceTree = "<group>"; };
-		4965B7941F44365700BCEBC2 /* ModuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleManager.swift; sourceTree = "<group>"; };
+		4965B7941F44365700BCEBC2 /* DirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryManager.swift; sourceTree = "<group>"; };
 		49A7C9C01F41BD54006AB66E /* DMSSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DMSSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A7C9C31F41BD54006AB66E /* DMSSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSSDK.h; sourceTree = "<group>"; };
 		49A7C9C41F41BD54006AB66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				493D42B01F57F46800B74620 /* ContentController.swift */,
 				4965B7901F43463300BCEBC2 /* Directory.swift */,
 				4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */,
-				4965B7941F44365700BCEBC2 /* ModuleManager.swift */,
+				4965B7941F44365700BCEBC2 /* DirectoryManager.swift */,
 				49D141A21F57F3AF001DDCD4 /* Frameworks */,
 				49A7C9C31F41BD54006AB66E /* DMSSDK.h */,
 				49A7C9C41F41BD54006AB66E /* Info.plist */,
@@ -344,7 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4965B7951F44365700BCEBC2 /* ModuleManager.swift in Sources */,
+				4965B7951F44365700BCEBC2 /* DirectoryManager.swift in Sources */,
 				493D42B11F57F46800B74620 /* ContentController.swift in Sources */,
 				4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */,
 				49379F371F57F54F00CBA445 /* Utilities.swift in Sources */,
