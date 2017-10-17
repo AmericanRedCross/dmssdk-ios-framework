@@ -32,9 +32,6 @@ public struct Directory {
     /// An array of file descriptors that are assosciated with this module
     public var attachments: [FileDescriptor]?
     
-    /// If the module is marked as being a pert of the "Critical Path", this is true.
-    public var critical: Bool = false
-    
     init?(with dictionary: [AnyHashable: Any]) {
         
         guard let identifier = dictionary["id"] as? Int else {
@@ -58,10 +55,6 @@ public struct Directory {
         
         if let _fileDescriptors = dictionary["attachments"] as? [[AnyHashable: Any]] {
             attachments = _fileDescriptors.flatMap({ FileDescriptor(with: $0)})
-        }
-        
-        if let _critical = dictionary["critical"] as? Bool {
-            critical = _critical
         }
     }
 }
