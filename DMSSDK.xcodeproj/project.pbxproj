@@ -10,7 +10,7 @@
 		4912BAC01F5ED2EF00AD7100 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 49379FDE1F5D8FB800CBA445 /* libz.tbd */; };
 		49379F371F57F54F00CBA445 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49379F311F57F54F00CBA445 /* Utilities.swift */; };
 		493D42951F57F40100B74620 /* ThunderRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493D428C1F57F3F700B74620 /* ThunderRequest.framework */; };
-		493D42B11F57F46800B74620 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D42B01F57F46800B74620 /* ContentController.swift */; };
+		493D42B11F57F46800B74620 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D42B01F57F46800B74620 /* ContentManager.swift */; };
 		495A900A1F5EDEC400843EEE /* untar.h in Headers */ = {isa = PBXBuildFile; fileRef = 495A90091F5EDE7A00843EEE /* untar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		495A90171F5EE12800843EEE /* untar.c in Sources */ = {isa = PBXBuildFile; fileRef = 495A90081F5EDE7A00843EEE /* untar.c */; };
 		4965B7911F43463300BCEBC2 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965B7901F43463300BCEBC2 /* Directory.swift */; };
@@ -78,7 +78,7 @@
 		49379F311F57F54F00CBA445 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		49379FDE1F5D8FB800CBA445 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		493D42831F57F3F700B74620 /* ThunderRequest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThunderRequest.xcodeproj; path = ThunderRequest/ThunderRequest.xcodeproj; sourceTree = SOURCE_ROOT; };
-		493D42B01F57F46800B74620 /* ContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
+		493D42B01F57F46800B74620 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		495A90081F5EDE7A00843EEE /* untar.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = untar.c; sourceTree = "<group>"; };
 		495A90091F5EDE7A00843EEE /* untar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = untar.h; sourceTree = "<group>"; };
 		495A90151F5EE02F00843EEE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -159,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				49379F311F57F54F00CBA445 /* Utilities.swift */,
-				493D42B01F57F46800B74620 /* ContentController.swift */,
+				493D42B01F57F46800B74620 /* ContentManager.swift */,
 				4965B7901F43463300BCEBC2 /* Directory.swift */,
 				4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */,
 				4965B7941F44365700BCEBC2 /* DirectoryManager.swift */,
@@ -345,7 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4965B7951F44365700BCEBC2 /* DirectoryManager.swift in Sources */,
-				493D42B11F57F46800B74620 /* ContentController.swift in Sources */,
+				493D42B11F57F46800B74620 /* ContentManager.swift in Sources */,
 				4965B7931F44323C00BCEBC2 /* FileDescriptor.swift in Sources */,
 				49379F371F57F54F00CBA445 /* Utilities.swift in Sources */,
 				4965B7911F43463300BCEBC2 /* Directory.swift in Sources */,

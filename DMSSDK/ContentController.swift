@@ -10,7 +10,7 @@ import Foundation
 import ThunderRequest
 
 /// A controller responsible for managing content and bundles. This includes facilitating the downloads and updates of new bundle content.
-public class ContentController {
+public class ContentManager {
     
     /// The network request controller for the ARCDMS module. Responsible for handling the download of bundles and related files
     private let requestController = TSCRequestController(baseAddress: "https://cie.arc.cubeapis.com/api/")

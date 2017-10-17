@@ -15,7 +15,7 @@ public class DirectoryManager {
         
     public init() {
         
-        if let _filePath = ContentController().fileUrl(forResource: "structure", withExtension: "json", inDirectory: nil) {
+        if let _filePath = ContentManager().fileUrl(forResource: "structure", withExtension: "json", inDirectory: nil) {
             
             print("<ModuleManager> Loading data from \(_filePath)")
             
