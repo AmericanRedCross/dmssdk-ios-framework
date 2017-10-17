@@ -12,7 +12,7 @@ import Foundation
 public class DirectoryManager {
     
     /// An array of top level directories loaded using one of the `DirectoryManager` initialisers
-    public var directories: [Directory]?
+    private(set) public var directories: [Directory]?
     
     /// Initialises the manager with an optional array of directories. If you wish to initialise using the `structure.json` from the parent app's bundle, please call the `init()` method
     ///

@@ -136,6 +136,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		496E46811F961EC6003F34B8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				493D42B01F57F46800B74620 /* ContentManager.swift */,
+				4965B7941F44365700BCEBC2 /* DirectoryManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		496E46821F961ECD003F34B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4965B7901F43463300BCEBC2 /* Directory.swift */,
+				4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		49A7C9B61F41BD54006AB66E = {
 			isa = PBXGroup;
 			children = (
@@ -158,12 +176,10 @@
 		49A7C9C21F41BD54006AB66E /* DMSSDK */ = {
 			isa = PBXGroup;
 			children = (
-				49379F311F57F54F00CBA445 /* Utilities.swift */,
-				493D42B01F57F46800B74620 /* ContentManager.swift */,
-				4965B7901F43463300BCEBC2 /* Directory.swift */,
-				4965B7921F44323C00BCEBC2 /* FileDescriptor.swift */,
-				4965B7941F44365700BCEBC2 /* DirectoryManager.swift */,
+				496E46811F961EC6003F34B8 /* Managers */,
+				496E46821F961ECD003F34B8 /* Models */,
 				49D141A21F57F3AF001DDCD4 /* Frameworks */,
+				49379F311F57F54F00CBA445 /* Utilities.swift */,
 				49A7C9C31F41BD54006AB66E /* DMSSDK.h */,
 				49A7C9C41F41BD54006AB66E /* Info.plist */,
 			);

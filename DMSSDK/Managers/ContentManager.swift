@@ -15,7 +15,10 @@ public class ContentManager {
     /// The network request controller for the ARCDMS module. Responsible for handling the download of bundles and related files
     private let requestController = TSCRequestController(baseAddress: "https://cie.arc.cubeapis.com/api/")
     
+    /// The path to the bundle directory that contains the bundle from the DMS. Please note that this does not mean that the directory actually contains a bundle
     private var bundleDirectory: URL?
+    
+    /// The path to the directory that contains any documents that have been downloaded by the framework
     private var documentsDirectory: URL?
     
     /// The timestamp of the bundle that is currently in use by the app. Returns 0 if there is not any
