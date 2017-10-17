@@ -14,6 +14,9 @@ public struct Directory {
     /// The unique identifier of the module object
     public var identifier: Int
     
+    /// The identifier of the parent Directory if one exists
+    public var parentIdentifier: Int?
+    
     /// The position at which this module should be displayed when presented in a list
     public var order: Int = 0
     
@@ -37,6 +40,8 @@ public struct Directory {
         guard let identifier = dictionary["id"] as? Int else {
             return nil
         }
+        
+        parentIdentifier = dictionary["parentId"] as? Int
         
         self.identifier = identifier
         
