@@ -72,6 +72,13 @@
 			remoteGlobalIDString = 49A7C9BF1F41BD54006AB66E;
 			remoteInfo = ARCDM;
 		};
+		49FFEF461F964DEF00B0B7B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493D42831F57F3F700B74620 /* ThunderRequest.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C2E5088119C835A300350F00;
+			remoteInfo = ThunderRequest;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -253,6 +260,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				49FFEF471F964DEF00B0B7B3 /* PBXTargetDependency */,
 				49A7C9CC1F41BD54006AB66E /* PBXTargetDependency */,
 			);
 			name = DMSSDKTests;
@@ -393,6 +401,11 @@
 			isa = PBXTargetDependency;
 			target = 49A7C9BF1F41BD54006AB66E /* DMSSDK */;
 			targetProxy = 49A7C9CB1F41BD54006AB66E /* PBXContainerItemProxy */;
+		};
+		49FFEF471F964DEF00B0B7B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ThunderRequest;
+			targetProxy = 49FFEF461F964DEF00B0B7B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
