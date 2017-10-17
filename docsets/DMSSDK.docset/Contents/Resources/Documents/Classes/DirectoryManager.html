@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DirectoryManager Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/DirectoryManager" class="dashAnchor"></a>
+    <a title="DirectoryManager Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">DMSSDK Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/3sidedcube/ARCDMSSDK"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">DMSSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        DirectoryManager Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ContentManager.html">ContentManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DirectoryManager.html">DirectoryManager</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BundleError.html">BundleError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/BundleInformation.html">BundleInformation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Directory.html">Directory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FileDescriptor.html">FileDescriptor</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>DirectoryManager</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">DirectoryManager</span></code></pre>
+
+                </div>
+              </div>
+            <p>A manager that loads the directory data and provides utilities for loading data surrounding directories</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6DMSSDK16DirectoryManagerC11directoriesSayAA0B0VGSgv"></a>
+                    <a name="//apple_ref/swift/Property/directories" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6DMSSDK16DirectoryManagerC11directoriesSayAA0B0VGSgv">directories</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An array of top level directories loaded using one of the <code>DirectoryManager</code> initialisers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private(set)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">directories</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Directory.html">Directory</a></span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6DMSSDK16DirectoryManagerCACSayAA0B0VGSg11directories_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(directories:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6DMSSDK16DirectoryManagerCACSayAA0B0VGSg11directories_tcfc">init(directories:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialises the manager with an optional array of directories. If you wish to initialise using the <code>structure.json</code> from the parent app&rsquo;s bundle, please call the <code><a href="../Classes/DirectoryManager.html#/s:6DMSSDK16DirectoryManagerCACycfc">init()</a></code> method</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">directories</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Directory.html">Directory</a></span><span class="p">]?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>directories</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of Directory objects that have been loaded from elsewhere</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6DMSSDK16DirectoryManagerCACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6DMSSDK16DirectoryManagerCACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialises the <code>DirectoryManager</code> using <code>structure.json</code> from the parent app&rsquo;s bundle if available.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6DMSSDK16DirectoryManagerCACyp10dataSource_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(dataSource:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6DMSSDK16DirectoryManagerCACyp10dataSource_tcfc">init(dataSource:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialises the <code>DirectoryManager</code> with a JSON Object that can be parsed into an array of <code><a href="../Structs/Directory.html">Directory</a></code> objects</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dataSource</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dataSource</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A compatible JSON object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6DMSSDK16DirectoryManagerC9directoryAA0B0VSgSi3for_SayAFG2intFZ"></a>
+                    <a name="//apple_ref/swift/Method/directory(for:in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6DMSSDK16DirectoryManagerC9directoryAA0B0VSgSi3for_SayAFG2intFZ">directory(for:in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Searches for a directory with a given identifier. This method will start with the given array and recurse through each items <code>directory</code> array until all paths are exhausted.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">directory</span><span class="p">(</span><span class="k">for</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="k">in</span> <span class="nv">directories</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Directory.html">Directory</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Directory.html">Directory</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The identifier of the <code><a href="../Structs/Directory.html">Directory</a></code> to search for</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>directories</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The array of directories to search through recursively</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The <code><a href="../Structs/Directory.html">Directory</a></code> object if it was found, nil otherwise.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2017 <a class="link" href="https://3sidedcube.com" target="_blank" rel="external">3 SIDED CUBE</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
