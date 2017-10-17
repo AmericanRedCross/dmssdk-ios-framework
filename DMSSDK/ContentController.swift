@@ -23,6 +23,7 @@ public class ContentController {
         return UserDefaults.standard.value(forKey: "CurrentBundleTimestamp") as? TimeInterval ?? 0
     }
     
+    /// Initialises the content controller and creates the directories for the bundle if they are missing
     public init() {
         
         if let _bundlePath = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).last {
@@ -91,6 +92,12 @@ public class ContentController {
         }
     }
     
+    /// Downloads the file from a given url and stores it in the `Documents` directory for the app
+    ///
+    /// - Parameters:
+    ///   - url: The URL of the file to download. This should be the full URL to the .ppt, .docx, .pdf, etc.
+    ///   - progress: A closure that will periodically be called with an update on the progress of the file download
+    ///   - completion: A closure to be called once the download completes. This will be called for both success or failure with a `Result` object
     public func downloadDocumentFile(from url: URL, progress: @escaping TSCRequestProgressHandler, completion: @escaping (Result<URL>) -> Void) {
         
         requestController.downloadFile(withPath: url.absoluteString, progress: progress) { (fileLocation, error) in
@@ -230,6 +237,10 @@ public class ContentController {
         return nil
     }
     
+    /// Checks the local disk to see if we have already downloaded a file for a remote URL.
+    ///
+    /// - Parameter remoteURL: The full remote URL of the document to check for
+    /// - Returns: The local file URL for the remote file, if it exists. Returns nil if it is not available locally.
     public func localFileURL(for remoteURL: URL) -> URL? {
         
         if let filePath = documentsDirectory?.appendingPathComponent(remoteURL.lastPathComponent) {
