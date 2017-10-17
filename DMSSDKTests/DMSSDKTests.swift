@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import ARCDM
+@testable import DMSSDK
 
-class ARCDMTests: XCTestCase {
+class DMSSDKTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

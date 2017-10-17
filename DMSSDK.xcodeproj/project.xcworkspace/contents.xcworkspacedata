@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ARCDM.xcodeproj">
+      location = "self:/Users/matthewcheetham/Local iOS/arc-cie-ios-client2/DMSSDK/DMSSDK.xcodeproj">
    </FileRef>
 </Workspace>

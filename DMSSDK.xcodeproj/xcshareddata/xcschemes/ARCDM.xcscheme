@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "49A7C9BF1F41BD54006AB66E"
-               BuildableName = "ARCDM.framework"
-               BlueprintName = "ARCDM"
-               ReferencedContainer = "container:ARCDM.xcodeproj">
+               BuildableName = "DMSSDK.framework"
+               BlueprintName = "DMSSDK"
+               ReferencedContainer = "container:DMSSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "49A7C9C81F41BD54006AB66E"
-               BuildableName = "ARCDMTests.xctest"
-               BlueprintName = "ARCDMTests"
-               ReferencedContainer = "container:ARCDM.xcodeproj">
+               BuildableName = "DMSSDKTests.xctest"
+               BlueprintName = "DMSSDKTests"
+               ReferencedContainer = "container:DMSSDK.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "49A7C9BF1F41BD54006AB66E"
-            BuildableName = "ARCDM.framework"
-            BlueprintName = "ARCDM"
-            ReferencedContainer = "container:ARCDM.xcodeproj">
+            BuildableName = "DMSSDK.framework"
+            BlueprintName = "DMSSDK"
+            ReferencedContainer = "container:DMSSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -67,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "49A7C9BF1F41BD54006AB66E"
-            BuildableName = "ARCDM.framework"
-            BlueprintName = "ARCDM"
-            ReferencedContainer = "container:ARCDM.xcodeproj">
+            BuildableName = "DMSSDK.framework"
+            BlueprintName = "DMSSDK"
+            ReferencedContainer = "container:DMSSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "49A7C9BF1F41BD54006AB66E"
-            BuildableName = "ARCDM.framework"
-            BlueprintName = "ARCDM"
-            ReferencedContainer = "container:ARCDM.xcodeproj">
+            BuildableName = "DMSSDK.framework"
+            BlueprintName = "DMSSDK"
+            ReferencedContainer = "container:DMSSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
