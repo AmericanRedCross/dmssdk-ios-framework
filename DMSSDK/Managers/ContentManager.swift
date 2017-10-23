@@ -49,10 +49,17 @@ public class ContentManager {
     ///
     /// - Parameters:
     ///   - projectID: The project ID to look up the bundle information for
+    ///   - language: The language code to check for a new bundle. If this is not supplied it will check against the default language as set by the DMS
     ///   - completion: A Result<BundleInformation> object that contains either the bundle information or an error where appropriate.
-    public func getBundleInformation(for projectID: String, completion: @escaping (Result<BundleInformation>) -> Void) {
+    public func getBundleInformation(for projectID: String, language: String?, completion: @escaping (Result<BundleInformation>) -> Void) {
         
-        requestController.get("projects/\(projectID)/publishes/latest") { (response, error) in
+        var informationURLString = "projects/\(projectID)/publishes/latest"
+        
+        if let language = language {
+            informationURLString = informationURLString.appending("?language=\(language)")
+        }
+        
+        requestController.get(informationURLString) { (response, error) in
             
             guard let bundleInformationDictionary = response?.dictionary else {
                 completion(Result(value: nil, error: error))
