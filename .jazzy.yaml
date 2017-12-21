@@ -1,9 +1,9 @@
 module: DMSSDK
-author: 3 SIDED CUBE
-author_url: https://3sidedcube.com/
-github_url: https://github.com/3sidedcube/dmssdk-ios-framework
-github-file-prefix: https://github.com/3sidedcube/dmssdk-ios-framework/tree/master
+author: American Red Cross
+author_url: https://americanredcross.com/
+github_url: https://github.com/americanredcross/dmssdk-ios-framework
+github-file-prefix: https://github.com/americanredcross/dmssdk-ios-framework/tree/master
 clean: true
 exclude: [DMSSDK/Utilities.swift]
-copyright: '© 2017 [3 SIDED CUBE](https://3sidedcube.com).'
+copyright: '© 2017 [American Red Cross](https://americanredcross.com).'
 readme: README.md

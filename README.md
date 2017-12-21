@@ -11,7 +11,7 @@ The DMS SDK provides models and classes to work with the ARC DMS system.
 6. Ensure that `DMSSDK.framework` and `ThunderRequest.framework` are listed under the `Target Dependencies` section of your `Build Phases`
 
 ## Code Documentation
-The documentation for the project is available [here](https://3sidedcube.github.io/dmssdk-ios-framework/)
+The documentation for the project is available [here](https://americanredcross.github.io/dmssdk-ios-framework/)
 
 ## Usage
 
@@ -25,7 +25,7 @@ Responsible for downloading bundles from your DMS. This controller will use the 
 
 ### DirectoryManager.swift
 
-By default this manager will look for a structure.json in the `CIEBundle` repository. You can also manually initialise this controller with your own JSON data. 
+By default this manager will look for a structure.json in the `CIEBundle` repository. You can also manually initialise this controller with your own JSON data.
 
 The manager is responsible for converting the JSON into `Directory` objects which can then be used to display DMS content however you wish.
 
