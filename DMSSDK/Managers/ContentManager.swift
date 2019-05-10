@@ -12,6 +12,24 @@ import ThunderRequest
 /// A controller responsible for managing content and bundles. This includes facilitating the downloads and updates of new bundle content.
 public class ContentManager {
     
+    /// The latest cached bundle information, this must be set externally as this SDK will not cache it automatically
+    public var cachedBundleInformation: BundleInformation? {
+        set {
+            guard let newValue = newValue else {
+                UserDefaults.standard.removeObject(forKey: "CachedBundleInfo")
+                return
+            }
+            guard let data = try? JSONEncoder().encode(newValue) else {
+                return
+            }
+            UserDefaults.standard.set(data, forKey: "CachedBundleInfo")
+        }
+        get {
+            guard let data = UserDefaults.standard.data(forKey: "CachedBundleInfo") else { return nil }
+            return try? JSONDecoder().decode(BundleInformation.self, from: data)
+        }
+    }
+    
     /// The network request controller for the DMSSDK module. Responsible for handling the download of bundles and related files
     private let requestController = TSCRequestController(baseAddress: Bundle.main.infoDictionary?["DMSSDKBaseURL"] as? String)
     
@@ -296,6 +314,10 @@ public struct BundleInformation {
         
         availableLanguages = dataDictionary["languages"] as? [String]
     }
+}
+
+extension BundleInformation: Codable {
+    
 }
 
 /// An enum representing possible errors that may occur when attempting to download bundle data
